@@ -1,29 +1,38 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { Link } from 'react-router-dom'
+import LinkBox from './LinkBox'
+import BurgerMenu from './BurgerMenu'
+import './Navbar.css'
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2>PORTFOLIO.</h2>
+      <Link to="/" className="portfolio-link"><h2>PORTFOLIO.</h2></Link>
       <ul className="nav-links">
         <li>
-          <Link to="/cphfw" className="nav-link">
-            Copenhagen Fashion Week
-          </Link>
+          <LinkBox text="Copenhagen Fashion Week" to="/cphfw" color="orange" />
         </li>
         <li>
-          <Link to="/botanical-garden" className="nav-link">
-            Botanical Garden
-          </Link>
+          <LinkBox text="Botanical Garden" to="/botanical-garden" color="green" />
         </li>
         <li>
-          <Link to="/nhm" className="nav-link">
-            Natural History Museum
-          </Link>
+          <LinkBox text="Natural History Museum" to="/nhm" color="#8B7355" />
         </li>
       </ul>
+      <BurgerMenu>
+        <ul className="mobile-nav-links">
+          <li>
+            <LinkBox text="Copenhagen Fashion Week" to="/cphfw" color="orange" />
+          </li>
+          <li>
+            <LinkBox text="Botanical Garden" to="/botanical-garden" color="green" />
+          </li>
+          <li>
+            <LinkBox text="Natural History Museum" to="/nhm" color="#8B7355" />
+          </li>
+        </ul>
+      </BurgerMenu>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
